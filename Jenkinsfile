@@ -63,6 +63,7 @@ pipeline {
             }
         }
 
+        /*
         stage('Upload to Nexus') {
             steps {
                 withCredentials([usernamePassword(
@@ -79,6 +80,7 @@ pipeline {
                 }
             }
         }
+        */
 
         stage('Docker Build & Push') {
             steps {
