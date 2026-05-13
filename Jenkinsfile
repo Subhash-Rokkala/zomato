@@ -2,22 +2,22 @@ pipeline {
     agent any
 
     tools {
-        jdk 'jdk21'
+        jdk 'jdk17'
         nodejs 'node23'
     }
 
     environment {
-        DOCKER_IMAGE = "rajeshtutta123/zomato"
+        DOCKER_IMAGE = "subhashrokkala/zomato"
         AWS_REGION = "us-east-1"
         CLUSTER_NAME = "mycluster"
-        RECIPIENTS = "rajeshtutta123@gmail.com"
+        RECIPIENTS = "mr.siddu1432@gmail.com"
     }
 
     stages {
 
-        stage('Clone Repo') {
+        stage('git checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/rajeshtutta/zomato.git'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'git-creds', url: 'https://github.com/Subhash-Rokkala/zomato.git']])
             }
         }
 
