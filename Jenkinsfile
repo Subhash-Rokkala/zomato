@@ -37,7 +37,7 @@ pipeline {
                 script {
                     def scanner = tool 'sonar-scanner'
 
-                    withSonarQubeEnv('sq') {
+                    withSonarQubeEnv('sonar-server') {
                         sh """
                         ${scanner}/bin/sonar-scanner \
                         -Dsonar.projectKey=zomato \
