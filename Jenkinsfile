@@ -124,14 +124,13 @@ pipeline {
                 sh 'kubectl get svc'
             }
         }
-    }
 */
     stage("deploying as conatiner"){
         steps{
            sh 'docker run -itd --name zomatocont -p 3005:80 $IMAGE:latest'
         }
+      }
     }
-    
     post {
 
         success {
@@ -142,5 +141,4 @@ pipeline {
             echo 'Pipeline Failed'
         }
     }
- }
 }
