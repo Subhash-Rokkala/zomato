@@ -105,6 +105,7 @@ pipeline {
             }
         }
 
+        /*
         stage('Deploy to EKS') {
             steps {
                 sh '''
@@ -124,7 +125,13 @@ pipeline {
             }
         }
     }
-
+*/
+    stage("deploying as conatiner"){
+        steps{
+            docker run -itd --name zomatocont -p 3005:80 $IMAGE:latest
+        }
+    }
+    
     post {
 
         success {
