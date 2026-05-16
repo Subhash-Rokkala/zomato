@@ -18,4 +18,4 @@ spec:
       - name: zomato
         image: kastrov/zomato:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
